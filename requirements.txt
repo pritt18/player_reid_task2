@@ -1,0 +1,11 @@
+opencv-python
+numpy
+scikit-learn
+scipy
+filterpy
+
+# Optional (uncomment if using real models)
+# torch
+# torchvision
+# ultralytics
+# deep_sort_realtime
