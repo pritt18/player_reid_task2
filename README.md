@@ -1,4 +1,4 @@
-📘 Task 2: Re-Identification in a Single Feed
+# 📘 Task 2: Re-Identification in a Single Feed
 
 ## Project Overview
 This project uses object detection (YOLOv8) and DeepSORT-style tracking to maintain consistent player IDs within a single camera feed, even when players temporarily exit and re-enter the frame.
