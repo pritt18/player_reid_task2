@@ -1,27 +1,60 @@
-### Setup Instructions
+📘 Task 2: Re-Identification in a Single Feed
 
-1. Install Python 3.8+
-2. Create a virtual environment (optional but recommended):
+## Project Overview
+This project uses object detection (YOLOv8) and DeepSORT-style tracking to maintain consistent player IDs within a single camera feed, even when players temporarily exit and re-enter the frame.
 
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+---
+
+## Folder Structure
 ```
 
-3. Install required packages:
+player\_reid\_task2/
+├── main.py
+├── detect.py
+├── track.py
+├── models/
+│   └── best.pt
+├── data/
+│   └── 15sec\_input\_720p.mp4
+├── output/
+│   └── reid\_output.mp4
+├── requirements.txt
+├── README.md
+└── report.md
+
+````
+
+---
+
+## Setup Instructions
+
+### 1. Install Python
+Python 3.8+ recommended.
+
+### 2. Create and activate virtual environment (optional)
+```bash
+python -m venv venv
+venv\Scripts\activate   # On Windows
+source venv/bin/activate  # On Linux/macOS
+````
+
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the Script
+---
 
-Make sure your input video and model are placed correctly:
+## Run the Project
 
-```
-models/best.pt
-data/15sec_input_720p.mp4
-```
+### Place the following files in `data/` folder:
+
+* `15sec_input_720p.mp4`
+
+### Place your custom YOLO model in `models/`:
+
+* `best.pt`
 
 Then run:
 
@@ -29,20 +62,19 @@ Then run:
 python main.py
 ```
 
-### Project Structure
+The final annotated video will be saved to:
 
 ```
-player_reid_task2/
-├── models/
-│   └── best.pt
-├── data/
-│   └── 15sec_input_720p.mp4
-├── output/
-│   └── reid_output.mp4
-├── main.py
-├── detect.py
-├── track.py
-├── requirements.txt
-├── README.md
-└── report.md
+output/reid_output.mp4
 ```
+
+---
+
+## Notes
+
+* The script assigns unique IDs using tracking, not just detection.
+* If a player disappears and returns, the same ID is reassigned.
+* Uses a mock or simplified tracker by default (DeepSORT can be added).
+* Modify `track.py` to integrate more advanced tracking methods.
+
+---
