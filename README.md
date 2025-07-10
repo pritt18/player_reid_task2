@@ -70,6 +70,12 @@ output/reid_output.mp4
 
 ---
 
+## Download Required Files
+
+- [Download best.pt](https://drive.google.com/file/d/1bGSS4EuCWkYTLoBUEz0h2FMsy-PNYGKy/view?usp=sharing)
+
+---
+
 ## Notes
 
 * The script assigns unique IDs using tracking, not just detection.
